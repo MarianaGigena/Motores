@@ -1,0 +1,30 @@
+// C++ code
+//
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(A1, INPUT);
+  pinMode(A2, INPUT);
+}
+
+void loop()
+{
+  if (analogRead(A0) == HIGH) {
+    // adelante
+    analogWrite(9, 255);
+    analogWrite(10, 0);
+  }
+  if (analogRead(A1) == HIGH) {
+    // atras
+    analogWrite(9, 0);
+    analogWrite(10, 255);
+  }
+  if (analogRead(A2) == HIGH) {
+    // atras
+    analogWrite(9, 0);
+    analogWrite(10, 0);
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}
